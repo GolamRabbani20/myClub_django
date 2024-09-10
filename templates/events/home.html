@@ -1,0 +1,21 @@
+{% extends 'common/base.html' %}
+
+{% block title %} home {% endblock title%}
+{% block content %}
+<center>
+    <div>
+        <h3>Alhumdulilla! Done. Hello {{name}}| {{age}}</h3>
+        <h5>
+            Now time is : {{current_time}}<br>
+            year: {{year}}<br>
+            month: {{month}}<br>
+            month number: {{month_number}}<br>
+            ........................................<br>
+            {{cal | safe}}
+            <br><br>
+            Copyright-{{crrent_year}}
+        </h5>
+    </div>
+</center>
+
+{% endblock %}

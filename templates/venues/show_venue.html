@@ -1,0 +1,28 @@
+{% extends 'common/base.html' %}
+
+{% block title %} Details Venue {% endblock title%}
+
+{% block content %}
+<center> <h1>Venue Details</h1> </center>
+<div class='container'>
+        <div class="card">
+            <div class="card-header">
+            {{venue}}
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{venue}}</h5>
+                <li>address: {{venue.address}}</li>
+                <li>Zip code: {{venue.zip_code}}</li>
+                <li>Phone: {{venue.phone}}</li>
+                <li>
+                    Website: <a href="{{venue.web}}"> {{venue.web}}</a>
+                </li>
+                <li>Email: {{venue.email_address}}</li>
+            </div>
+            <a href="{% url 'list-venues' %}" class="btn btn-secondary ">Back</a> 
+        </div>
+       
+        <br>
+</div>
+
+{% endblock %}

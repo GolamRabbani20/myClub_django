@@ -1,0 +1,15 @@
+{% extends 'common/base.html' %}
+
+{% block title %} Upadte Event {% endblock title%}
+
+{% block content %}
+<center> <h1>Upadte Event...</h1> </center>
+<div class='container'>
+    <form action="" method=POST>
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit", value="Upadte" class="btn btn-secondary">
+    </form>
+</div>
+
+{% endblock %}
