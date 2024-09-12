@@ -1,0 +1,23 @@
+{% extends 'common/base.html' %}
+
+{% block title %} Register {% endblock title%}
+{% block content %}
+
+    {% if form.error %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <p>There was as error with ypur form...!</p>
+        <a href="{% url 'user-register' %}" class="close" data-dismiss="modal" aria-label="close">&times;</a>
+      </div>
+    {% endif %}
+
+<center><h1>Register</h1></center>
+<div class='container shadow p-3 mb-5 bg-body-tertiary rounded border border-black'>
+    <form action="{% url 'user-register' %}" method=POST>
+        {% csrf_token %}
+
+        {{form.as_p}}
+        <center><input type="submit", value="Register" class="btn btn-secondary"></center>
+    </form>    
+</div>
+
+{% endblock %}

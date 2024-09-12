@@ -22,4 +22,6 @@ class MyAdminUser(admin.ModelAdmin):
     list_display = ['firstname', 'lastname', 'email']
     ordering = ('-firstname', )
 
+   
+
 admin.site.register(MyClubUser, MyAdminUser)

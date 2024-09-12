@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
     # Internal apps
     'events_app',
+    'members_app',
     
 ]
 

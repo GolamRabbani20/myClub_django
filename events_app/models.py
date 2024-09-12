@@ -17,6 +17,10 @@ class MyClubUser(models.Model):
     lastname = models.CharField(max_length=50)
     email = models.EmailField('User Email')
 
+    class Meta:
+        verbose_name_plural = "My-Club-Users"
+        
+
     def __str__(self):
         return self.firstname + ' ' + self.lastname
     
