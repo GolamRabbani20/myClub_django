@@ -5,7 +5,7 @@
 {% block content %}
 <center> <h1>Events({{events_number}})</h1> </center>
 <div class='container'>
-    {% for event in all_events %}
+    {% for event in events %}
         <div class="card">
             <div class="card-header">
             {{event}}
@@ -39,6 +39,31 @@
         
         <br>
     {% endfor %}
-</div>
+    <!--
+    {{events}}<br>
+    Has previous_page: {{ events.has_previous }}<br>
+    Has next_page: {{ events.has_next }}<br>
+    Current page: {{ events.number }}<br>
+    Number of pages: {{ events.paginator.num_pages}}
+    -->
 
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+        {% if events.has_previous %}
+        <li class="page-item"><a href="?page=1" class="page-link">&laquo; First</a></li>
+            <li class="page-item"><a href="?page={{events.previous_page_number}}" class="page-link">Previous</a></li>
+        {% endif %}
+        {% for i in nums %}
+        <li class="page-item disabled"><a href="#" class="page-link"> {{forloop.counter}}</a></li>
+        {% endfor%}
+
+        {% if events.has_next %}
+            <li class="page-item"><a class="page-link" href="?page={{events.next_page_number}}" >next</a></li>
+            <li class="page-item"><a class="page-link" href="?page={{events.paginator.num_pages}}" >Last&raquo;</a></li>
+        {% endif %}
+    </ul>
+</nav>
+
+<br><br><br><br>    
+</div>
 {% endblock %}
